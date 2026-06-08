@@ -1,78 +1,97 @@
-/* Базовий стиль: 1 колонка (для мобільного) */
+/* --- Секція FEATURES --- */
+.section {
+  padding: 96px 0; /* Вертикальний відступ для мобільного/планшета */
+}
+
+@media screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0; /* Більший відступ для десктопа */
+  }
+}
+
 .features-list {
   display: flex;
   flex-direction: column;
   gap: 72px;
 }
 
-.features-item {
-  width: 100%; /* Картка на всю ширину */
-}
-
-/* Планшет: 2 колонки */
 @media screen and (min-width: 768px) {
   .features-list {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 72px 24px;
   }
-  .features-item {
-    width: calc((100% - 24px) / 2); /* 2 картки в ряд */
-  }
 }
 
-/* Десктоп: 4 колонки */
 @media screen and (min-width: 1158px) {
   .features-list {
     gap: 24px;
   }
-  .features-item {
-    width: calc((100% - 3 * 24px) / 4); /* 4 картки в ряд */
-  }
-  
-  /* Іконки з'являються тільки тут */
-  .features-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-/* Базовий стиль: 1 колонка (для мобільного) */
-.features-list {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
 }
 
 .features-item {
-  width: 100%; /* Картка на всю ширину */
+  width: 100%;
 }
 
-/* Планшет: 2 колонки */
 @media screen and (min-width: 768px) {
-  .features-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 72px 24px;
-  }
   .features-item {
-    width: calc((100% - 24px) / 2); /* 2 картки в ряд */
+    width: calc((100% - 24px) / 2);
   }
 }
 
-/* Десктоп: 4 колонки */
 @media screen and (min-width: 1158px) {
-  .features-list {
-    gap: 24px;
-  }
   .features-item {
-    width: calc((100% - 3 * 24px) / 4); /* 4 картки в ряд */
+    width: calc((100% - 72px) / 4);
   }
-  
-  /* Іконки з'являються тільки тут */
+}
+
+/* --- Іконки (приховано на мобільному/планшеті) --- */
+.features-icon-container {
+  display: none;
+}
+
+@media screen and (min-width: 1158px) {
   .features-icon-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px; /* Проміжок між іконкою та заголовком */
   }
+}
+
+/* --- Типографіка --- */
+.item-subtitle {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  text-align: center; /* Центрування на мобільному */
+  margin-bottom: 8px; /* Проміжок між заголовком та абзацом */
+}
+
+@media screen and (min-width: 768px) {
+  .item-subtitle {
+    text-align: left; /* Вирівнювання вліво на планшеті та вище */
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .item-subtitle {
+    font-weight: 500; /* Інша товщина на десктопі */
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.item-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
 }

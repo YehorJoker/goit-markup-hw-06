@@ -45,56 +45,62 @@
     background-color: #404bbf;
 }
 
+/* --- Секція HERO --- */
 .hero {
-    padding: 72px 0;
-    margin: 0 auto;
-    background-color: #2e2f42;
-    /* Колір за замовчуванням */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* Фонове зображення для мобільного 1x */
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url('../images/hero-bg-mob@1x.jpg');
+  background-color: #2e2f42;
+  padding: 72px 0; /* Базовий відступ для мобільного */
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url('../images/hero-bg-mob@1x.jpg');
 }
 
 /* Retina для мобільного */
 @media (min-resolution: 192dpi) {
-    .hero {
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url('../images/hero-bg-mob@2x.jpg');
-    }
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url('../images/hero-bg-mob@2x.jpg');
+  }
 }
-/* ПЛАНШЕТ (768px) */
+
+/* --- Заголовок HERO --- */
+.hero-title {
+  font-size: 36px;       /* Менший розмір для мобільних */
+  line-height: 1.11;      /* Більший line-height */
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  max-width: 216px;      /* Вужчий блок для мобільних */
+  margin: 0 auto 72px;   /* Збільшений відступ до кнопки (було 48px) */
+}
+
+/* --- Планшет (768px+) --- */
 @media screen and (min-width: 768px) {
-    .hero {
-        padding: 112px 0;
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url('../images/hero-bg-tab@1x.jpg');
-    }
+  .hero {
+    padding: 112px 0;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url('../images/hero-bg-tab@1x.jpg');
+  }
 
-    @media (min-resolution: 192dpi) {
-        .hero {
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                url('../images/hero-bg-tab@2x.jpg');
-        }
-    }
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
+    margin-bottom: 36px; /* Зменшений відступ для планшета (був як на десктопі) */
+  }
 }
 
-/* ДЕСКТОП (1158px) */
+/* --- Десктоп (1158px+) --- */
 @media screen and (min-width: 1158px) {
-    .hero {
-        padding: 188px 0;
-        max-width: 1440px;
-        /* Згідно з ТЗ */
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url('../images/hero-bg-desk@1x.jpg');
-    }
+  .hero {
+    padding: 188px 0;
+    max-width: 1440px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url('../images/hero-bg-desk@1x.jpg');
+  }
 
-    @media (min-resolution: 192dpi) {
-        .hero {
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                url('../images/hero-bg-desk@2x.jpg');
-        }
-    }
+  .hero-title {
+    margin-bottom: 48px; /* Оригінальний більший відступ для десктопа */
+  }
 }
