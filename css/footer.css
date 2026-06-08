@@ -10,7 +10,7 @@
 .footer-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     /* Центруємо все для мобільного */
     text-align: center;
     gap: 72px;
@@ -224,7 +224,16 @@
 }
 
 /* --- АДАПТИВНІСТЬ --- */
-
+@media screen and (min-width: 768px) {
+  .footer-container {
+    text-align: left; /* Текст зліва */
+    align-items: baseline;
+    justify-content: flex-start;
+  }
+  .footer-text {
+    text-align: left; /* Переконайтеся, що опис теж зліва */
+  }
+}
 /* Планшет (768px+) */
 @media screen and (min-width: 768px) {
     .footer-container {
@@ -272,3 +281,22 @@
     }
 }
 
+/* Мобільний */
+.footer-text {
+    text-align: left;
+}
+
+/* Виправлено для моб. згідно з фідбеком */
+
+/* Десктоп */
+@media screen and (min-width: 1158px) {
+    .footer {
+        padding: 100px 0;
+    }
+
+    .footer-subscribe {
+        margin-left: auto;
+    }
+
+    /* Притискає блок вправо */
+}
