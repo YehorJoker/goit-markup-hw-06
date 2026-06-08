@@ -117,20 +117,46 @@
 .contact-link:focus {
     color: #404bbf;
 }
-/* Мобільний: ховаємо посилання (залишаємо тільки лого та бургер) */
-.header-nav {
-    display: none;
+/* Мобільні: приховуємо навігацію та контакти, показуємо бургер */
+.header-nav, .contacts {
+  display: none;
 }
 
-/* Планшет та десктоп: показуємо навігацію */
-@media screen and (min-width: 768px) {
-    .header-nav {
-        display: block;
-    }
+.menu-open-btn {
+  display: block;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
 
-    .nav-list {
-        display: flex;
-        gap: 40px;
-        /* Відступ між пунктами меню */
-    }
+/* Планшет та Десктоп: ховаємо бургер, показуємо меню і контакти */
+@media screen and (min-width: 768px) {
+  .menu-open-btn {
+    display: none;
+  }
+  .header-nav, .contacts {
+    display: block;
+  }
+}
+/* Базові стилі для контактів */
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-link {
+  font-size: 12px; /* Менший шрифт до 1157px */
+  line-height: 1.16;
+}
+
+@media screen and (min-width: 1158px) {
+  .contacts-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .contact-link {
+    font-size: 16px; /* Збільшений шрифт на десктопі */
+    padding: 24px 0;
+  }
 }
