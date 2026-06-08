@@ -1,3 +1,21 @@
+/* --- Секція PORTFOLIO (Повна структура) --- */
+.portfolio {
+  padding: 96px 0; /* Вертикальні відступи */
+}
+
+@media screen and (min-width: 1158px) {
+  .portfolio {
+    padding: 120px 0; /* Збільшений відступ для десктопа */
+  }
+}
+
+.section-title {
+  text-align: center; /* Центрування заголовка */
+  margin-bottom: 72px; /* Відступ між заголовком і списком */
+  font-size: 36px;
+  line-height: 1.11;
+  color: #2e2f42;
+}
 /* Базові стилі (мобільний) */
 .portfolio-list {
   display: flex;

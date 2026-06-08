@@ -89,9 +89,16 @@
 }
 
 .item-text {
-  font-weight: 400;
+  font-weight: 500;      /* За замовчуванням (мобільний та планшет) - 500 */
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+}
+
+/* Десктоп: скидаємо товщину на 400 */
+@media screen and (min-width: 1158px) {
+  .item-text {
+    font-weight: 400;    /* На десктопі повертаємо до 400 */
+  }
 }

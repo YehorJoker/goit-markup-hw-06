@@ -1,108 +1,87 @@
+/* --- Секція TEAM (Mobile First) --- */
 .team-bg {
-    background-color: #f4f4fd;
+  background-color: #f4f4fd;
+  padding: 96px 0; /* Виправлення 1: Додали вертикальні відступи */
 }
 
-.team-card .item-subtitle,
-.team-card .item-text {
-    text-align: center;
-}
-
-.team-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-}
-.section-title {
-    margin-bottom: 72px;
-}
-
-.team-card {
-    background-color: #ffffff;
-    border-radius: 0 0 4px 4px;
-    width: calc((100% - 3 * 24px) / 4);
-
-    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-        0 1px 1px 0 rgba(46, 47, 66, 0.16),
-        0 1px 6px 0 rgba(46, 47, 66, 0.08); 
-}
-
-.team-img {
-    display: block;
-}
-
-.team-card-content {
-    padding: 32px 16px;
-    text-align: center;
-}
-
-.team-card-content .item-subtitle {
-    margin-bottom: 8px;
-}
-.social-list {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 8px;
-    /* Невеликий відступ від посади учасника */
-}
-
-/* Кругла обгортка для посилання */
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #4d5ae5;
-    border-radius: 50%;
-
-    /* Анімація: ТЗ вимагає вказувати властивості ЯВНО, без 'all' */
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Ховер та фокус на кружечок */
-.social-link:hover,
-.social-link:focus {
-    background-color: #404bbf;
-}
-
-/* Стилізація самої SVG-іконки всередині */
-.social-icon {
-    /* Завдяки fill="currentColor" іконка візьме колір тексту свого батька */
-    fill: #f4f4fd;
-}
-.team-list {
-    display: flex;
-    flex-direction: column;
-    /* Мобільний: картки одна під одною */
-    gap: 72px;
-    /* Відступ між картками з макета */
-    align-items: center;
-}
-
-.team-card {
-    background-color: #ffffff;
-    width: 264px;
-    /* Вимога ТЗ: фіксована ширина */
-    border-radius: 0px 0px 4px 4px;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-/* Планшет (768px+) */
-@media screen and (min-width: 768px) {
-    .team-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 64px 24px;
-        /* Вертикальний 64px, горизонтальний 24px */
-        justify-content: center;
-    }
-}
-
-/* Десктоп (1158px+) */
 @media screen and (min-width: 1158px) {
-    .team-list {
-        gap: 24px;
-    }
+  .team-bg {
+    padding: 120px 0; /* Виправлення 2: Збільшений відступ для десктопа */
+  }
 }
+
+.section-title {
+  text-align: center; /* Виправлення 3: Заголовок по центру */
+  margin-bottom: 72px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.team-card {
+  background-color: #ffffff;
+  width: 264px; /* Як вимагає ТЗ */
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+              0 1px 1px 0 rgba(46, 47, 66, 0.16),
+              0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+/* --- Планшет (768px+) --- */
+@media screen and (min-width: 768px) {
+  .team-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 64px 24px;
+  }
+}
+
+/* --- Десктоп (1158px+) --- */
+@media screen and (min-width: 1158px) {
+  .team-list {
+    gap: 24px;
+  }
+}
+
+/* --- Вміст картки --- */
+.team-card-content {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.item-subtitle { margin-bottom: 8px; }
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus { background-color: #404bbf; }
+.social-icon { fill: #f4f4fd; }
