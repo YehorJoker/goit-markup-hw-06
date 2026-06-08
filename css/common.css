@@ -66,6 +66,3 @@ p {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
-* {
-    outline: 1px solid red !important;
-}
