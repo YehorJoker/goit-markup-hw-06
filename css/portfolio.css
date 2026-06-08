@@ -48,3 +48,25 @@
     width: calc((100% - 48px) / 3); /* 3 колонки */
   }
 }
+/* Використовуйте .section, бо саме цей клас стоїть у вашому HTML */
+.section {
+  padding: 96px 0;
+}
+
+@media screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0;
+  }
+}
+
+/* Якщо вам потрібно специфічно саме для портфоліо, 
+   можна зробити так: */
+.portfolio.section {
+  padding: 96px 0;
+}
+
+@media screen and (min-width: 1158px) {
+  .portfolio.section {
+    padding: 120px 0;
+  }
+}

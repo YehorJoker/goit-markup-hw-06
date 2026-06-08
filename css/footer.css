@@ -38,6 +38,15 @@
   align-items: center;
 }
 
+.footer-subscribe-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 16px; /* Це той самий відступ, про який просив ментор */
+  letter-spacing: 0.02em;
+}
+
 .footer-social-title {
   font-weight: 500;
   font-size: 16px;
