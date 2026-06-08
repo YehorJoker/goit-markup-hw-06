@@ -6,11 +6,12 @@
 .header-container {
   display: flex;
   align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  justify-content: space-between; /* Бургер та Лого розійдуться по краях */
 }
 
+/* --- Логотип --- */
 .header-logo {
+  padding: 16px 0; /* Вертикальний ритм створює саме логотип */
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -18,14 +19,34 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #2e2f42;
-  margin-right: 120px; /* Базовий відступ для планшета */
+}
+
+/* --- Контакти --- */
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- Адаптивність (Планшет і Десктоп) --- */
+@media screen and (min-width: 768px) {
+  .header-logo { margin-right: 120px; } /* Фіксований відступ для планшета */
+  
+  .contacts-list {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 @media screen and (min-width: 1158px) {
-  .header-logo {
-    margin-right: 76px; /* Стабільний відступ для десктопа */
+  .header-logo { margin-right: 76px; } /* Фіксований відступ для десктопа */
+  
+  .contacts-list {
+    flex-direction: row; /* Рядок на десктопі */
+    gap: 40px;          /* Відступ 40px між контактами */
   }
 }
+
 
 .logo-accent { color: #4d5ae5; }
 
@@ -71,13 +92,6 @@
     background-color: #404bbf;
     border-radius: 2px;
   }
-}
-
-/* --- Контакти --- */
-.contacts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .contact-link {
