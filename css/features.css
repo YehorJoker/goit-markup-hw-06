@@ -1,0 +1,78 @@
+/* Базовий стиль: 1 колонка (для мобільного) */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.features-item {
+  width: 100%; /* Картка на всю ширину */
+}
+
+/* Планшет: 2 колонки */
+@media screen and (min-width: 768px) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+  .features-item {
+    width: calc((100% - 24px) / 2); /* 2 картки в ряд */
+  }
+}
+
+/* Десктоп: 4 колонки */
+@media screen and (min-width: 1158px) {
+  .features-list {
+    gap: 24px;
+  }
+  .features-item {
+    width: calc((100% - 3 * 24px) / 4); /* 4 картки в ряд */
+  }
+  
+  /* Іконки з'являються тільки тут */
+  .features-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* Базовий стиль: 1 колонка (для мобільного) */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.features-item {
+  width: 100%; /* Картка на всю ширину */
+}
+
+/* Планшет: 2 колонки */
+@media screen and (min-width: 768px) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+  .features-item {
+    width: calc((100% - 24px) / 2); /* 2 картки в ряд */
+  }
+}
+
+/* Десктоп: 4 колонки */
+@media screen and (min-width: 1158px) {
+  .features-list {
+    gap: 24px;
+  }
+  .features-item {
+    width: calc((100% - 3 * 24px) / 4); /* 4 картки в ряд */
+  }
+  
+  /* Іконки з'являються тільки тут */
+  .features-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,71 @@
+/* Базові налаштування */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #434455;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+/* АДАПТИВНИЙ КОНТЕЙНЕР (найважливіша частина) */
+.container {
+    max-width: 320px;
+    /* Для мобільного */
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Планшет */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding: 0 24px;
+    }
+}
+
+/* Десктоп */
+@media screen and (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+        padding: 0 15px;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+* {
+    outline: 1px solid red !important;
+}

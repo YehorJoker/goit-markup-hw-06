@@ -1,0 +1,253 @@
+/* --- Базові стилі для бекдропу та модалки --- */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 24px 24px 24px;
+    background-color: #fcfcfc;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Кнопка закриття --- */
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404bbf;
+    /* Колір при наведенні */
+    border: none;
+    fill: #ffffff;
+    /* Колір іконки при наведенні */
+}
+
+.modal-close-icon,
+.modal-close-icon {
+    fill: #ffffff;
+}
+.modal-close-icon {
+    fill: #2e2f42;
+    /* Базовий колір */
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* Плавний перехід для іконки */
+}
+
+/* --- Форма --- */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-field {
+    margin-bottom: 8px;
+}
+
+.modal-input-wrap {
+    position: relative;
+    margin-top: 4px;
+}
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    padding-left: 38px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus {
+    border-color: #4d5ae5;
+}
+
+.modal-input:focus+.modal-icon {
+    fill: #4d5ae5;
+}
+
+.modal-textarea {
+    height: 120px;
+    padding: 8px 16px;
+    resize: none;
+}
+
+/* --- Чекбокс --- */
+.modal-checkbox-wrapper {
+    margin-top: 0px;
+    margin-bottom: 24px;
+}
+
+.modal-label-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #8e8f99;
+}
+
+.checkbox-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    margin-right: 8px;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.visually-hidden:checked+.modal-label-checkbox .checkbox-box {
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
+}
+
+/* --- Кнопка Send --- */
+.modal-submit-btn {
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    margin: 0 auto;
+    background-color: #4d5ae5;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+    background-color: #404bbf;
+}
+.modal-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 16px;
+    /* Відступ під заголовком */
+}
+.modal-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    /* Це і є той самий "блідий" колір */
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+.modal-field:has(#user-comment) {
+    margin-bottom: 16px;
+}
+
+/* Типографіка textarea */
+.modal-textarea {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4); /* Колір для тексту */
+}
+
+/* Колір плейсхолдера textarea */
+.modal-textarea::placeholder {
+    color: rgba(46, 47, 66, 0.4);
+}
+
+/* Типографіка чекбокса */
+.modal-label-checkbox {
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+}
+
+/* Підкреслення та колір для посилання */
+.modal-label-checkbox a {
+    color: #4d5ae5;
+    text-decoration: underline;
+}
+
+/* Тінь для кнопки Submit */
+.modal-submit-btn {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+/* Приклад стилізації після зміни структури */
+#modal {
+    /* Стилі для бекдропу (колишній .backdrop) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+}
+
+#modal .modal {
+    /* Стилі для самого віконця (центризація, розміри) */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
